@@ -7,7 +7,7 @@ const axiosClient = axios.create({
 });
 
 axiosClient.interceptors.request.use((config) => {
-    config.headers.Authorization = `Bearer ${store.replaceState.user.token}`;
+    config.headers.Authorization = `Bearer ${store.state.user.token}`;
     return config;
 });
 
@@ -23,3 +23,5 @@ axiosClient.interceptors.response.use(
         throw error;
     }
 );
+
+export default axiosClient;
