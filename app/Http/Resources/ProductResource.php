@@ -8,6 +8,8 @@ use Illuminate\Http\Resources\Json\JsonResource;
 
 class ProductResource extends JsonResource
 {
+    public static $wrap = false;
+
     /**
      * Transform the resource into an array.
      *
@@ -20,7 +22,7 @@ class ProductResource extends JsonResource
             'title' => $this->title,
             'slug' => $this->slug,
             'description' => $this->description,
-            'image' => $this->image,
+            'image_url' => $this->image,
             'price' => $this->price,
             'created_at' => Carbon::parse($this->created_at)->toDateTimeString(),
             'updated_at' => Carbon::parse($this->updated_at)->toDateTimeString(),
