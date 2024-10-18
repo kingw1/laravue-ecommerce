@@ -32,7 +32,7 @@ const defaultProductData = {
 };
 
 const showModal = ref(false);
-const productModel = ref(...defaultProductData);
+const productModel = ref({ ...defaultProductData });
 
 function showProductModal() {
     showModal.value = true;
